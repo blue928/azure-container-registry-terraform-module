@@ -10,7 +10,8 @@ resource "azurerm_container_registry" "k8s_acr" {
   resource_group_name = var.resource_group_name
   location            = var.location
   sku                 = var.acr_sku
-  admin_enabled       = var.acr_admin_enabled
+  #admin_enabled       = var.acr_admin_enabled
+  anonymous_pull_enabled = true
 
   tags = {
     #environment = var.environment
